@@ -1,3 +1,6 @@
+Note:"Modeling human like Speech and Text summaries" and "kaggle" folder hold more projects that I worked on.
+      
+      
                                                                 Intro
 Pinpointing the optimal time to buy or sell music festival tickets offers buyers the best deals and sellers the highest sale prices, respectively.  Predicting the best time to buy or sell music festival tickets can lead a seller to making a profit, or help a buyer find an affordable deal to attend a concert. By using Ebay API to gather data, this paper looks into different machine learning models to predict if the auction will sell at the current listed price and if a buyer should buy today or wait. 
 
