@@ -8,3 +8,5 @@ Join in, "make our day", and then "you've got to ask yourself one question: 'Do 
 
 
 URL to the competition: https://www.kaggle.com/c/tmdb-box-office-prediction/overview
+
+Best results I achived was 2.08479 as the root mean squared log error.
