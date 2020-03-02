@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Ticket Prediction</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Ticket Prediction</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline mt-2 mt-md-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+
+    <main role="main">
+
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="first-slide" src="img/58930_1548569285384_7521030_n.jpg" alt="First slide">
+            <div class="container">
+              <div class="carousel-caption text-left">
+                <h1>Will my tickets sell?</h1>
+                <p>This is my capstone project in predicting if Coachella tickets would sell or not.</p>
+                <p>Fill-out form below to see if your tickets would sell or not.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <!-- Marketing messaging and featurettes
+      ================================================== -->
+      <!-- Wrap the rest of the page in another container to center all the content. -->
+
+      <div class="container marketing">
+
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+        </div><!-- /.row -->
+
+        <!-- START THE FEATURETTES -->
+
+        <hr class="featurette-divider">
+<form action="ticket.php" method="post">
+  <div class="form-group">
+    <label for="days">Days till the festival</label>
+    <input type="text" class="form-control" name="days"  placeholder="days">
+
+  </div>
+  <div class="form-group">
+    <label for="price">Total price</label>
+    <input type="text" class="form-control" name="price" placeholder="price">
+  </div>
+    <div class="form-group">
+    <label for="price">Which weekend?</label>
+    <input type="text" class="form-control" name="weekend" placeholder="weekend">
+  </div>
+  <div class="form-check">
+  <input type='hidden' value='0' name='ShuttlePasses'>
+	    <input type="checkbox" class="form-check-input" name="ShuttlePasses" value = "1">
+    <label class="form-check-label" for="ShuttlePasses">Shuttle Passes</label>
+  </div>
+  
+    <div class="form-check">
+  <input type='hidden' value='0' name='vip'>
+      <input type="checkbox" class="form-check-input" name="vip" value = "1">
+    <label class="form-check-label" for="vip">VIP</label>
+	  </div>
+	      <div class="form-check">
+  <input type='hidden' value='0' name='CARCAMPINGPASS'>
+
+      <input type="checkbox" class="form-check-input" name="CARCAMPINGPASS" value = "1">
+    <label class="form-check-label" for="CARCAMPINGPASS">CAR CAMPING PASS</label>
+	  </div>
+	      <div class="form-check">
+
+      <input type="checkbox" class="form-check-input" name="VIPParking" value = "1">
+    <label class="form-check-label" for="VIPParking">VIP Parking</label>
+	  </div>
+	
+	
+	
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">Predicted price trend using LSTM neural network.</h2>
+            <p class="lead">Graph shows for non VIP tickets.</p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img class="featurette-image img-fluid mx-auto" src="img/pricetrend.png" alt="LSTM image">
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">Average sold price of tickets.</h2>
+            <p class="lead"></p>
+          </div>
+          <div class="col-md-5">
+            <img class="featurette-image img-fluid mx-auto" src="img/nonvip.png" alt="Generic placeholder image">
+          </div>
+        </div>
+		
+		        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">Average sold price of VIP tickets.</h2>
+            <p class="lead"></p>
+          </div>
+          <div class="col-md-5">
+            <img class="featurette-image img-fluid mx-auto" src="img/vip.png" alt="Generic placeholder image">
+			            
+
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- /END THE FEATURETTES -->
+
+      </div><!-- /.container -->
+
+
+      <!-- FOOTER -->
+      <footer class="container">
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="../../../../assets/js/vendor/holder.min.js"></script>
+  </body>
+</html>
