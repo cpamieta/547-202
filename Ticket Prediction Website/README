@@ -1,1 +1,13 @@
+This folder contains a basic website that I built to be used as the UI for users to check if there auction would sell or
+not depending on the parameters they send. The four main parts of the site are the index.html , ticket.php, test.py and the saved
+trained machine learning models.
 
+1)index.html is just the frontend website the user would see. I used bootstrap as the style framework of the site. The main function of this
+site is a form that the user would fill out with the ticket information. This data would be sent to the ticket.php file.
+
+2)ticket.php, the function of this file is to get the user data from the htms site and send that info to the test.py script
+
+3)test.py, this file sends the user data into the trained models to predict if the ticket would sell or not. At the end, it would 
+send the results back to the ticket.php file which would then display the results on the frontend webpage to the user.
+
+4)saved models, did not upload to github since they where to large. I used pickle library to save and load the models.
