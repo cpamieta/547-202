@@ -1,4 +1,4 @@
-Note:"Modeling human like Speech and Text summaries" and "kaggle" folder hold more projects that I worked on.
+Note:"Modeling human like Speech and Text summaries" and "kaggle" folder hold more projects that I worked on. Python exercises and  	Artificial Intelligence Exercise folder hold challanges I completed from www.hackerrank.com.
       
       
                                                                 Intro
