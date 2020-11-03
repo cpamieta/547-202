@@ -1,0 +1,7 @@
+runtime: php
+env: flex
+runtime_config:
+    document_root: .
+env_variables:
+    APP_LOG: errorlog
+    GOOGLE_STORAGE_BUCKET: "ticket-prediction.appspot.com"
