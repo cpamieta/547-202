@@ -82,7 +82,7 @@ $resp = simplexml_load_file($apicall);
 if ($resp->ack == "Success") {
   $results = '';
   // If the response was loaded, parse it and build links  \
-  $file = fopen("gs://$app['bucket_name']/ticketData.csv","a");
+  $file = fopen("gs://".$app['bucket_name']."/ticketData.csv","a");
   
   gs://${my_bucket}
   $c = count($resp->searchResult);
@@ -129,3 +129,21 @@ else {
 
 }
 ?>
+<html>
+<head>
+<title>eBay Search Results for /title>
+<style type="text/css">body { font-family: arial,sans-serif;} </style>
+</head>
+<body>
+
+<h1>eBay Search Results for </h1>
+
+<table>
+<tr>
+  <td>
+  </td>
+</tr>
+</table>
+
+</body>
+</html>
