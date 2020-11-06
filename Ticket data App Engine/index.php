@@ -24,19 +24,21 @@ $i = '0';  // Initialize the item filter index to 0
 // Check to see if the request was successful, else print an error
   $results = '';
   // If the response was loaded, parse it and build links  \
-  $file = fopen("gs://".$app['bucket_name']."/ticketData.csv","a");
-  
- 
+ // $file = fopen("gs://".$app['bucket_name']."/ticketData.csv","a");
+  	$data = "test";
+
+ $options = ['gs' => ['Content-Type' => 'text/plain']];
+$context = stream_context_create($options);
+file_put_contents("gs://".$app['bucket_name']."/hello_options.txt", $data, 0, $context);
 	
 	
                                           
-	$data = "test";
-	  fputcsv($file,explode(',',$data));
+	 // fputcsv($file,explode(',',$data));
 	  
 
     // For each SearchResultItem node, build a link and append it to $results
   
-  fclose($file);
+  //fclose($file);
 
 
 ?>
