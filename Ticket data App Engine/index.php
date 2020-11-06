@@ -19,6 +19,14 @@ $query = 'coachella';  // You may want to supply your own query
 $safequery = urlencode($query);  // Make the query URL-friendly
 $i = '0';  // Initialize the item filter index to 0
 
+
+function register_stream_wrapper($projectId) {   
+    $client = new StorageClient(['projectId' => $projectId]);
+    $client->registerStreamWrapper();
+}
+register_stream_wrapper("ticket-prediction");
+
+
 // Create a PHP array of the item filters you want to use in your request
 
 // Check to see if the request was successful, else print an error
