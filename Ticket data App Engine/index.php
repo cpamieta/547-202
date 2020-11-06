@@ -1,6 +1,7 @@
 <?php
 //Getting Started with the Finding API: Finding Items by Keywords, 20019,[Sourcecode]. 
 //http://developer.ebay.com/DevZone/finding/HowTo/GettingStarted_PHP_NV_XML/GettingStarted_PHP_NV_XML.html
+namespace Google\Cloud\Samples\AppEngine\Storage;
 
 error_reporting(E_ALL);  // Turn on all errors, warnings and notices for easier debugging
 
@@ -17,7 +18,6 @@ $globalid = 'EBAY-US';  // Global ID of the eBay site you want to search (e.g., 
 $query = 'coachella';  // You may want to supply your own query
 $safequery = urlencode($query);  // Make the query URL-friendly
 $i = '0';  // Initialize the item filter index to 0
-namespace Google\Cloud\Samples\AppEngine\Storage;
 
 
 function register_stream_wrapper($projectId) {   
