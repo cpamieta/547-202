@@ -1,10 +1,10 @@
-# Cloud Storage on App Engine Standard for PHP 7.2
+# Getting ticket day from ebay on App Engine Standard for PHP 7.2
 
-This sample application demonstrates how to use [Cloud Storage on App Engine for PHP 7.2](https://cloud.google.com/appengine/docs/standard/php7/using-cloud-storage).
+Google cloud App Engine used to setup a data pipeline to extract data from ebay  and saving the results to the google cloud storege.
 
 ## Setup
 
-Before running this sample:
+Before running
 
 ## Prerequisites
 
