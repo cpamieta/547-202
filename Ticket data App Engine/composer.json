@@ -1,0 +1,11 @@
+{
+    "require": {
+        "google/cloud-storage": "^1.5"
+    },
+    "autoload": {
+        "files": [
+            "src/write_stream.php"
+          
+        ]
+    }
+}

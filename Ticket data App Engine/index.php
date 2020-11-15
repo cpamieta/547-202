@@ -1,70 +1,57 @@
 <?php
-//Getting Started with the Finding API: Finding Items by Keywords, 20019,[Sourcecode]. 
-//http://developer.ebay.com/DevZone/finding/HowTo/GettingStarted_PHP_NV_XML/GettingStarted_PHP_NV_XML.html
+/**
+ * Copyright 2018 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 namespace Google\Cloud\Samples\AppEngine\Storage;
 
-error_reporting(E_ALL);  // Turn on all errors, warnings and notices for easier debugging
+use Google\Auth\Credentials\GCECredentials;
 
-//Google cloud settings
-use Google\Cloud\Storage\StorageClient;
-$app = array();
-$app['bucket_name'] = "ticket-prediction.appspot.com";
-$app['project_id'] = getenv('GCLOUD_PROJECT');
-// API request variables
-$endpoint = 'https://svcs.ebay.com/services/search/FindingService/v1';  // URL to call
-$version = '1.13.0';  // API version supported by your application
-$appid = 'chrispam-ticketpr-PRD-56c5a7b3e-f41fdc91';  // Replace with your own AppID
-$globalid = 'EBAY-US';  // Global ID of the eBay site you want to search (e.g., EBAY-DE)
-$query = 'coachella';  // You may want to supply your own query
-$safequery = urlencode($query);  // Make the query URL-friendly
-$i = '0';  // Initialize the item filter index to 0
+require_once __DIR__ . '/vendor/autoload.php';
 
+$bucketName = getenv('GOOGLE_STORAGE_BUCKET');
+$projectId = getenv('GOOGLE_CLOUD_PROJECT');
+$defaultBucketName = sprintf('%s.appspot.com', $projectId);
 
-function register_stream_wrapper($projectId) {   
-    $client = new StorageClient(['projectId' => $projectId]);
-    $client->registerStreamWrapper();
+register_stream_wrapper($projectId);
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    write_stream($bucketName, 'ebayTic.csv', $_REQUEST['content']);
+
+    header('Location: /');
+    exit;
 }
-register_stream_wrapper("ticket-prediction");
-
-
-// Create a PHP array of the item filters you want to use in your request
-
-// Check to see if the request was successful, else print an error
-  $results = '';
-  // If the response was loaded, parse it and build links  \
- // $file = fopen("gs://".$app['bucket_name']."/ticketData.csv","a");
-  	$data = "test";
-
- $options = ['gs' => ['Content-Type' => 'text/plain']];
-$context = stream_context_create($options);
-file_put_contents("gs://".$app['bucket_name']."/hello_options.txt", $data, 0, $context);
-	
-	
-                                          
-	 // fputcsv($file,explode(',',$data));
-	  
-
-    // For each SearchResultItem node, build a link and append it to $results
-  
-  //fclose($file);
-
 
 ?>
+<!DOCTYPE HTML>
 <html>
-<head>
-<title>eBay Search Results for /title>
-<style type="text/css">body { font-family: arial,sans-serif;} </style>
-</head>
-<body>
+  <head>
+    <title>Ebay api</title>
+  </head>
 
-<h1>eBay Search Results for </h1>
+  <body>
+    <h1>Ebay api</h1>
 
-<table>
-<tr>
-  <td>
-  </td>
-</tr>
-</table>
+    <div>
+        <form action="/write/stream" method="post">
+            Ebay search term:<br />
+            <textarea name="content"></textarea><br />
+            <input type="submit" />
+        </form>
 
-</body>
+    <div>
+
 </html>
+
