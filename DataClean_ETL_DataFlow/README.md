@@ -18,4 +18,4 @@ Running dataFlow:
 
 3) run,source /home/cpamieta/env/bin/activate
 
-4)execute pyton script, python3 ./df06.py -p $DEVSHELL_PROJECT_ID -b ticket-prediction.appspot.com
+4)execute pyton script, python3 ./DataCleanETL.py -p $DEVSHELL_PROJECT_ID -b ticket-prediction.appspot.com
