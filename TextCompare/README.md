@@ -1,11 +1,12 @@
-A Text compare webservices using python Flask framework. Pass in two strings and return a calculated percentage of how similar they are.
+A Text compare webservices using python Flask framework. Pass in two strings and return a calculated percentage of how similar they are. 
+Source file is located in the src folder.
 
 Docker container located, 
 
 https://hub.docker.com/r/cpamieta/textcompare
 
 
-Sample request using notebook:
+Sample request using notebook. Request is a json format which requires two fields of text1 and text2, the reply is also in json. See sample below.
 
 import requests
 
