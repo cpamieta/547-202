@@ -1,5 +1,5 @@
 A Text compare webservices using python Flask framework. Pass in two strings and return a calculated percentage of how similar they are. 
-Source file is located in the src folder.
+Source file is located in the src folder. See the requirement text file for required imports.
 
 Docker container located, 
 
